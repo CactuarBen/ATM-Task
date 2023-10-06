@@ -14,7 +14,7 @@ public class Client {
         return balance;
     }
 
-    public double setBalance(double balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
     
