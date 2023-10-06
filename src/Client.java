@@ -14,6 +14,10 @@ public class Client {
         return balance;
     }
 
+    public double setBalance(double balance) {
+        this.balance = balance;
+    }
+    
     public double getMaxBalance() {
         return maxBalance;
     }
