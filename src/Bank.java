@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Bank {
     public static ArrayList<Integer> withdrawCash(Client client, double amount) {
+        double removedAmount = amount; // saved unaltered value, deducted in the end for the safety reason
+        
         if (amount > 50000) {  // checks if the minimum for transaction is >200
             System.out.println("The amount for the ATM can't exceed 50.000");
             return new ArrayList<>(); // returns an empty ArrayList, that throws an error
@@ -51,6 +53,9 @@ public class Bank {
         for (int i = 0; i < numberOf200Banknotes; i++){
             banknotes.add(200);
         }
+
+        client.setBalance(client.getBalance()-removedAmount); //updating the balance
+        
         return banknotes;
     }
 }
