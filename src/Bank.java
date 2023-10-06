@@ -2,19 +2,19 @@ import java.util.ArrayList;
 
 public class Bank {
     public static ArrayList<Integer> withdrawCash(Client client, double amount) {
-        if (amount > 50000) {         // checks if the minimum for transaction is >200
+        if (amount > 50000) {  // checks if the minimum for transaction is >200
             System.out.println("The amount for the ATM can't exceed 50.000");
             return new ArrayList<>(); // returns an empty ArrayList, that throws an error
         }
-        if (amount > client.getMaxBalance()) {          // checks the maximum balance for daily transaction
+        if (amount > client.getMaxBalance()) {  // checks the maximum balance for daily transaction
             System.out.println("The amount exceeds your allowed daily maximum");
             return new ArrayList<>(); // returns an empty ArrayList, that throws an error
         }
-        if (client.getBalance() - amount < 0){
+        if (client.getBalance() - amount < 0){ // checks if there is sufficient balance
             System.out.println("Insufficient funds");
             return new ArrayList<>(); // returns an empty ArrayList, that throws an error
         }
-        if (amount < 200) {         // checks if the minimum for transaction is >200
+        if (amount < 200) {  // checks if the minimum for transaction is >200
             System.out.println("Minimum is 200, please select a bigger amount");
             return new ArrayList<>(); // returns an empty ArrayList, that throws an error
         }
@@ -51,8 +51,6 @@ public class Bank {
         for (int i = 0; i < numberOf200Banknotes; i++){
             banknotes.add(200);
         }
-
-
         return banknotes;
     }
 }
